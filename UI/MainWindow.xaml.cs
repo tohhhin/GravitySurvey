@@ -23,13 +23,14 @@ namespace UI
             public string Title { get; private set; }
 
             public ObservableCollection<DataPoint> Points { get; private set; }
-// this.MyModel = new PlotModel { Title = "Example 1" };
-// this.MyModel.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
+        public ObservableCollection<DataPoint> Points2 { get; private set; }
+        // this.MyModel = new PlotModel { Title = "Example 1" };
+        // this.MyModel.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
 
 
-//public PlotModel MyModel { get; private set; }
+        //public PlotModel MyModel { get; private set; }
 
-private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+        private void MenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             new AreaWindow().Show();
         }
@@ -70,6 +71,7 @@ private void MenuItem_OnClick(object sender, RoutedEventArgs e)
             }
             rff(file1, x1, y1);
             this.Points = new ObservableCollection<DataPoint>();
+            this.Points2 = new ObservableCollection<DataPoint>();
             /*
                               {
                                   new DataPoint(0, 4),
@@ -82,6 +84,7 @@ private void MenuItem_OnClick(object sender, RoutedEventArgs e)
             for (int i = 0; i < x1.Count; i++)
             {
                 Points.Add(new DataPoint(x1[i], y1[i]));
+                Points2.Add(new DataPoint(i, i+11));
             }
             Plot.DataContext = null;
             Plot.DataContext = this;

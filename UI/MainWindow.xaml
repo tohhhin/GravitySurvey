@@ -81,6 +81,7 @@
                 <oxy:Plot Name="Plot" Title="{Binding Title}" Grid.ColumnSpan="4" Margin="0,33,0,-151">
                     <oxy:Plot.Series>
                         <oxy:LineSeries ItemsSource="{Binding Points}"/>
+                        <oxy:LineSeries ItemsSource="{Binding Points2}" />
                     </oxy:Plot.Series>
                 </oxy:Plot>
                 <!--<oxy:PlotView Name="PlotView"  Model="{Binding MyModel}"/>-->
